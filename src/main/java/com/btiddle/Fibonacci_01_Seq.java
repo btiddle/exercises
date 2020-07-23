@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class FibonacciSeq {
+public class Fibonacci_01_Seq {
 
     public static List<Integer> fibonacciSeq(int n) {
         if (n < 0 || n > 47) {

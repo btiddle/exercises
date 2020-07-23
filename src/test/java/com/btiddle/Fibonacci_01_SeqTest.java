@@ -1,13 +1,13 @@
 package test.java.com.btiddle;
 
-import static main.java.com.btiddle.FibonacciSeq.fibonacciSeq;
+import static main.java.com.btiddle.Fibonacci_01_Seq.fibonacciSeq;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-class FibonacciSeqTest {
+class Fibonacci_01_SeqTest {
 
     private final List<Integer> expected = Arrays.asList(
             0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89,

@@ -1,18 +1,18 @@
 package test.java.com.btiddle;
 
 
-//import static com.btiddle.FibonacciSeqBigInt.fibonacciSeqBigInt;
+//import static com.btiddle.Fibonacci_02_SeqBigInteger.fibonacciSeqBigInt;
 
 import org.junit.jupiter.api.Test;
 
-import static main.java.com.btiddle.FibonacciSeqBigInt.fibonacciSeqBigInt;
+import static main.java.com.btiddle.Fibonacci_02_SeqBigInteger.fibonacciSeqBigInt;
 import static org.junit.jupiter.api.Assertions.*;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-class FibonacciSeqBigIntTest {
+class Fibonacci_02_SeqBigIntegerTest {
 
     private final List<BigInteger> expected = Arrays.asList(
             BigInteger.valueOf(0),

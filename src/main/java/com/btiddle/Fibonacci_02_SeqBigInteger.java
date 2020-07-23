@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class FibonacciSeqBigInt {
+public class Fibonacci_02_SeqBigInteger {
 
     public static List<BigInteger> fibonacciSeqBigInt(int n) {
         if (n < 0) {
