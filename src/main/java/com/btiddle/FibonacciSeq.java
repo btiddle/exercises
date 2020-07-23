@@ -12,7 +12,7 @@ Hint:
   with range (-2,147,483,648 .. 2,147,483,647).
 */
 
-package com.btiddle.java;
+package main.java.com.btiddle;
 
 import java.util.ArrayList;
 import java.util.Arrays;

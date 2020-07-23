@@ -1,10 +1,8 @@
-package com.btiddle.java;
+package test.java.com.btiddle;
 
-import static com.btiddle.java.FibonacciSeq.fibonacciSeq;
+import static main.java.com.btiddle.FibonacciSeq.fibonacciSeq;
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
