@@ -1,6 +1,6 @@
 /*
 Title:
-    Fibonacci Nth Position Recursive Less Efficient
+    Fibonacci Nth Position Recursive
 
 Exercise:
     Write a method that returns the nth value of the Fibonacci sequence.
@@ -14,12 +14,13 @@ Hint:
     will need to use BigInteger to go beyond 47th position.
     This is more efficint then generating entire list and
     returning just the last element. However, can be made
-    even more efficient.
+    to be more efficient by not calculating the same value
+    multiple times.
 */
 
 package main.java.com.btiddle;
 
-public class Fibonacci_03_Nth_Recursive_Less_Efficient {
+public class Fibonacci_03_Nth_Position_Recursive {
 
     public static int fibonacciNth(int n) {
         if (n < 0 || n > 46) {

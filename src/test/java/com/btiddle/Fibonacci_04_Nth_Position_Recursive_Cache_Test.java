@@ -1,10 +1,12 @@
 package test.java.com.btiddle;
 
-import static main.java.com.btiddle.Fibonacci_03_Nth_Recursive_Less_Efficient.fibonacciNth;
+import static main.java.com.btiddle.Fibonacci_03_Nth_Position_Recursive.fibonacciNth;
+import static main.java.com.btiddle.Fibonacci_04_Nth_Position_Recursive_Cached.cachedFibN;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class Fibonacci_03_Nth_Recursive_Less_Efficient_Test {
+class Fibonacci_04_Nth_Position_Recursive_Cache_Test {
 
 //    private final List<Integer> expected = Arrays.asList(
 //            0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89,
@@ -16,34 +18,49 @@ class Fibonacci_03_Nth_Recursive_Less_Efficient_Test {
 //            433494437, 701408733, 1134903170, 1836311903);
 
     @Test
+    public void nonCached_vs_Cached() {
+        final long nonCachedStart = System.nanoTime();
+        assertEquals(1134903170, fibonacciNth(45));
+        final long nonCachedFinish = System.nanoTime();
+        assertEquals(1134903170, cachedFibN(45));
+        final long cachedFinish = System.nanoTime();
+        System.out.printf(
+                "Non cached time: %d nanoseconds%n",
+                nonCachedFinish - nonCachedStart);
+        System.out.printf(
+                "Cached time    : %d nanoseconds%n",
+                cachedFinish - nonCachedFinish);
+    }
+
+    @Test
     void fibonacci_nth_0() {
-        assertEquals(0, fibonacciNth(0));
+        assertEquals(0, cachedFibN(0));
     }
 
     @Test
     void fibonacci_nth_1() {
-        assertEquals(1, fibonacciNth(1));
+        assertEquals(1, cachedFibN(1));
     }
 
     @Test
     void fibonacci_nth_2() {
-        assertEquals(1, fibonacciNth(2));
+        assertEquals(1, cachedFibN(2));
     }
 
     @Test
     void fibonacci_nth_3() {
-        assertEquals(2, fibonacciNth(3));
+        assertEquals(2, cachedFibN(3));
     }
 
     @Test
     void fibonacci_nth_46() {
-        assertEquals(1836311903, fibonacciNth(46));
+        assertEquals(1836311903, cachedFibN(46));
     }
 
     @Test
     void fibonacci_nth_47_then_exception() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            fibonacciNth(47);
+            cachedFibN(47);
         });
 
         String expectedMessage = "n must be in range 0 to 46";
@@ -55,7 +72,7 @@ class Fibonacci_03_Nth_Recursive_Less_Efficient_Test {
     @Test
     void fibonacci_nth_neg_one_then_exception() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            fibonacciNth(-1);
+            cachedFibN(-1);
         });
 
         String expectedMessage = "n must be in range 0 to 46";
@@ -63,5 +80,7 @@ class Fibonacci_03_Nth_Recursive_Less_Efficient_Test {
 
         assertTrue(actualMessage.contains(expectedMessage));
     }
+
+
 
 }
