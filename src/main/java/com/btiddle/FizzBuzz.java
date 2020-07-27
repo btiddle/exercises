@@ -7,7 +7,7 @@ Exercise:
     multiples of 3 with the String Fizz, multiples of 5 with Buzz, and
     multiples of 15 with FizzBuzz.
 
-Hint:
+Insights:
     Check 15 before 3 and 5.
 */
 

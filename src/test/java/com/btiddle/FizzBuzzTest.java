@@ -18,7 +18,7 @@ public class FizzBuzzTest {
             "19", "Buzz");
 
     @Test
-    public void vanillaFizzBuzz() {
+    public void FizzBuzz() {
         assertEquals(expected, fizzbuzz(20));
     }
 
