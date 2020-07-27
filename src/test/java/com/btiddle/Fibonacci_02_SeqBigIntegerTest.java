@@ -1,20 +1,18 @@
 package test.java.com.btiddle;
 
-
-//import static com.btiddle.Fibonacci_02_SeqBigInteger.fibonacciSeqBigInt;
-
 import org.junit.jupiter.api.Test;
-
 import static main.java.com.btiddle.Fibonacci_02_SeqBigInteger.fibonacciSeqBigInt;
 import static org.junit.jupiter.api.Assertions.*;
 import java.math.BigInteger;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 class Fibonacci_02_SeqBigIntegerTest {
 
-    private final List<BigInteger> expected = Arrays.asList(
+    private final List<BigInteger> expected1 = Arrays.asList(
+            BigInteger.valueOf(0) );
+
+    private final List<BigInteger> expected2 = Arrays.asList(
             BigInteger.valueOf(0),
             BigInteger.valueOf(1),
             BigInteger.valueOf(1),
@@ -66,12 +64,25 @@ class Fibonacci_02_SeqBigIntegerTest {
             );
 
     @Test
-    void fibonacci_sequence_from_1_to_48() {
-        assertEquals(expected, fibonacciSeqBigInt(48));
+    void fibonacci_sequence_0() {
+        assertEquals(expected1, fibonacciSeqBigInt(0));
     }
 
     @Test
-    void fibonacci_sequence_0_then_empety() {
-        assertEquals(new ArrayList<Integer>(), fibonacciSeqBigInt(0));
+    void fibonacci_sequence_from_0_to_47() {
+        assertEquals(expected2, fibonacciSeqBigInt(47));
     }
+
+    @Test
+    void fibonacci_sequence_neg_one_exception() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            fibonacciSeqBigInt(-1);
+        });
+
+        String expectedMessage = "n must not be less than zero";
+        String actualMessage = exception.getMessage();
+
+        assertTrue(actualMessage.contains(expectedMessage));
+    }
+
 }
