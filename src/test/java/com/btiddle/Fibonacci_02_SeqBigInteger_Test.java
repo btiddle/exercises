@@ -7,7 +7,7 @@ import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.List;
 
-class Fibonacci_02_SeqBigIntegerTest {
+class Fibonacci_02_SeqBigInteger_Test {
 
     private final List<BigInteger> expected1 = Arrays.asList(
             BigInteger.valueOf(0) );

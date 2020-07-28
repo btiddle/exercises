@@ -1,10 +1,10 @@
 package test.java.com.btiddle;
 
-import static main.java.com.btiddle.Fibonacci_03_Nth_Position_Recursive.fibonacciNth;
+import static main.java.com.btiddle.Fibonacci_04_Nth_Position_Recursive.fibonacciNth;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class Fibonacci_03_Nth_Position_Recursive_Test {
+class Fibonacci_04_Nth_Position_Recursive_Test {
 
 //    private final List<Integer> expected = Arrays.asList(
 //            0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89,

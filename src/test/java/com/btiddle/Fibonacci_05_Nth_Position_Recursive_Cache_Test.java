@@ -1,12 +1,12 @@
 package test.java.com.btiddle;
 
-import static main.java.com.btiddle.Fibonacci_03_Nth_Position_Recursive.fibonacciNth;
-import static main.java.com.btiddle.Fibonacci_04_Nth_Position_Recursive_Cached.cachedFibN;
+import static main.java.com.btiddle.Fibonacci_04_Nth_Position_Recursive.fibonacciNth;
+import static main.java.com.btiddle.Fibonacci_05_Nth_Position_Recursive_Cached.cachedFibN;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class Fibonacci_04_Nth_Position_Recursive_Cache_Test {
+class Fibonacci_05_Nth_Position_Recursive_Cache_Test {
 
 //    private final List<Integer> expected = Arrays.asList(
 //            0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89,

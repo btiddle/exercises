@@ -14,8 +14,8 @@ Insights:
 
     Range of Java int is -2,147,483,648 .. 2,147,483,647.
 
-    fibonacci(46) = 1,836,311,903 can be calculaated using Java int.
-    fibonacci(47) = 2,971,215,073 can not be calcualted using Java int
+    fibonacci(46) = 1,836,311,903 can be calculated using Java int.
+    fibonacci(47) = 2,971,215,073 can not be calculated using Java int
     becasue it is out side the range for Java int. For values 47 and
     above, solution is to use the BigInteger data type.
 
@@ -34,7 +34,7 @@ package main.java.com.btiddle;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Fibonacci_04_Nth_Position_Recursive_Cached {
+public class Fibonacci_05_Nth_Position_Recursive_Cached {
 
     private static Map<Integer, Integer> fibCache = new HashMap<>();
 

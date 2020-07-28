@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
-class Fibonacci_01_SeqTest {
+class Fibonacci_01_Seq_Test {
 
     private final List<Integer> expected = Arrays.asList(
             0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89,
