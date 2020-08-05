@@ -1,7 +1,8 @@
-package test.java.com.btiddle;
+package general;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import static main.java.com.btiddle.Fibonacci_02_SeqBigInteger.fibonacciSeqBigInt;
+
 import static org.junit.jupiter.api.Assertions.*;
 import java.math.BigInteger;
 import java.util.Arrays;
@@ -65,18 +66,18 @@ class Fibonacci_02_SeqBigInteger_Test {
 
     @Test
     void fibonacci_sequence_0() {
-        assertEquals(expected1, fibonacciSeqBigInt(0));
+        Assertions.assertEquals(expected1, Fibonacci_02_SeqBigInteger.fibonacciSeqBigInt(0));
     }
 
     @Test
     void fibonacci_sequence_from_0_to_47() {
-        assertEquals(expected2, fibonacciSeqBigInt(47));
+        Assertions.assertEquals(expected2, Fibonacci_02_SeqBigInteger.fibonacciSeqBigInt(47));
     }
 
     @Test
     void fibonacci_sequence_neg_one_exception() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            fibonacciSeqBigInt(-1);
+            Fibonacci_02_SeqBigInteger.fibonacciSeqBigInt(-1);
         });
 
         String expectedMessage = "n must not be less than zero";

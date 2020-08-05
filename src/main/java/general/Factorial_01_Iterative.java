@@ -17,7 +17,7 @@ Insights:
     is better then long because BigInteger objects have no upper bound.
 */
 
-package main.java.com.btiddle;
+package general;
 
 public class Factorial_01_Iterative {
 

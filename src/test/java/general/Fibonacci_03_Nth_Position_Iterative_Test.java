@@ -1,6 +1,6 @@
-package test.java.com.btiddle;
+package general;
 
-import static main.java.com.btiddle.Fibonacci_03_Nth_Position_Iterative.fibonacci;
+import static general.Fibonacci_03_Nth_Position_Iterative.fibonacci;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

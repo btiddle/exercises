@@ -1,7 +1,8 @@
-package test.java.com.btiddle;
+package general;
 
-import static main.java.com.btiddle.Fibonacci_01_Seq.fibonacciSeq;
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
@@ -19,20 +20,20 @@ class Fibonacci_01_Seq_Test {
 
     @Test
     void fibonacci_sequence_from_0_to_46() {
-        assertEquals(expected, fibonacciSeq(46));
+        Assertions.assertEquals(expected, Fibonacci_01_Seq.fibonacciSeq(46));
     }
 
     @Test
     void fibonacci_sequence_from_0_to_46_Print() {
         for (int i = 0; i <= 46; i++) {
-            System.out.println(fibonacciSeq(i));
+            System.out.println(Fibonacci_01_Seq.fibonacciSeq(i));
         }
     }
 
     @Test
     void fibonacci_sequence_neg_one_exception() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            fibonacciSeq(-1);
+            Fibonacci_01_Seq.fibonacciSeq(-1);
         });
 
         String expectedMessage = "Error: Range for n is 0 to 46.";
@@ -44,7 +45,7 @@ class Fibonacci_01_Seq_Test {
     @Test
     void fibonacci_sequence_47_then_exception() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            fibonacciSeq(47);
+            Fibonacci_01_Seq.fibonacciSeq(47);
         });
 
         String expectedMessage = "Error: Range for n is 0 to 46.";

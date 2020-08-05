@@ -1,6 +1,6 @@
-package test.java.com.btiddle;
+package general;
 
-import static main.java.com.btiddle.Fibonacci_04_Nth_Position_Recursive.fibonacciNth;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,33 +17,33 @@ class Fibonacci_04_Nth_Position_Recursive_Test {
 
     @Test
     void fibonacci_nth_0() {
-        assertEquals(0, fibonacciNth(0));
+        Assertions.assertEquals(0, Fibonacci_04_Nth_Position_Recursive.fibonacciNth(0));
     }
 
     @Test
     void fibonacci_nth_1() {
-        assertEquals(1, fibonacciNth(1));
+        Assertions.assertEquals(1, Fibonacci_04_Nth_Position_Recursive.fibonacciNth(1));
     }
 
     @Test
     void fibonacci_nth_2() {
-        assertEquals(1, fibonacciNth(2));
+        Assertions.assertEquals(1, Fibonacci_04_Nth_Position_Recursive.fibonacciNth(2));
     }
 
     @Test
     void fibonacci_nth_3() {
-        assertEquals(2, fibonacciNth(3));
+        Assertions.assertEquals(2, Fibonacci_04_Nth_Position_Recursive.fibonacciNth(3));
     }
 
     @Test
     void fibonacci_nth_46() {
-        assertEquals(1836311903, fibonacciNth(46));
+        Assertions.assertEquals(1836311903, Fibonacci_04_Nth_Position_Recursive.fibonacciNth(46));
     }
 
     @Test
     void fibonacci_nth_47_then_exception() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            fibonacciNth(47);
+            Fibonacci_04_Nth_Position_Recursive.fibonacciNth(47);
         });
 
         String expectedMessage = "n must be in range 0 to 46";
@@ -55,7 +55,7 @@ class Fibonacci_04_Nth_Position_Recursive_Test {
     @Test
     void fibonacci_nth_neg_one_then_exception() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            fibonacciNth(-1);
+            Fibonacci_04_Nth_Position_Recursive.fibonacciNth(-1);
         });
 
         String expectedMessage = "n must be in range 0 to 46";

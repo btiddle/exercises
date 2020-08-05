@@ -29,7 +29,7 @@ Insights:
     5 seconds vs 0.000430 sseconds
 */
 
-package main.java.com.btiddle;
+package general;
 
 import java.util.HashMap;
 import java.util.Map;

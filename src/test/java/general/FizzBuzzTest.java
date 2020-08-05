@@ -1,6 +1,6 @@
-package test.java.com.btiddle;
+package general;
 
-import static main.java.com.btiddle.FizzBuzz.fizzbuzz;
+import static general.FizzBuzz.fizzbuzz;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.Arrays;

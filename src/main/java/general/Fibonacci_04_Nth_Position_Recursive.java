@@ -24,7 +24,7 @@ Insights:
     calculating the same value multiple times.
 */
 
-package main.java.com.btiddle;
+package general;
 
 public class Fibonacci_04_Nth_Position_Recursive {
 

@@ -11,7 +11,7 @@ Insights:
     Check 15 before 3 and 5.
 */
 
-package main.java.com.btiddle;
+package general;
 
 import java.util.ArrayList;
 import java.util.Arrays;

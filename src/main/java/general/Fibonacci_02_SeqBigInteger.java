@@ -18,7 +18,7 @@ Insights:
     above, solution is to use the BigInteger data type.
 */
 
-package main.java.com.btiddle;
+package general;
 
 import java.math.BigInteger;
 import java.util.ArrayList;

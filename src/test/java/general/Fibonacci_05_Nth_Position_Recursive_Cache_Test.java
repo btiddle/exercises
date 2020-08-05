@@ -1,8 +1,8 @@
-package test.java.com.btiddle;
+package general;
 
-import static main.java.com.btiddle.Fibonacci_04_Nth_Position_Recursive.fibonacciNth;
-import static main.java.com.btiddle.Fibonacci_05_Nth_Position_Recursive_Cached.cachedFibN;
+import static general.Fibonacci_04_Nth_Position_Recursive.fibonacciNth;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -22,7 +22,7 @@ class Fibonacci_05_Nth_Position_Recursive_Cache_Test {
         final long nonCachedStart = System.nanoTime();
         assertEquals(1134903170, fibonacciNth(45));
         final long nonCachedFinish = System.nanoTime();
-        assertEquals(1134903170, cachedFibN(45));
+        Assertions.assertEquals(1134903170, Fibonacci_05_Nth_Position_Recursive_Cached.cachedFibN(45));
         final long cachedFinish = System.nanoTime();
         System.out.printf(
                 "Non cached time: %d nanoseconds%n",
@@ -34,33 +34,33 @@ class Fibonacci_05_Nth_Position_Recursive_Cache_Test {
 
     @Test
     void fibonacci_nth_0() {
-        assertEquals(0, cachedFibN(0));
+        Assertions.assertEquals(0, Fibonacci_05_Nth_Position_Recursive_Cached.cachedFibN(0));
     }
 
     @Test
     void fibonacci_nth_1() {
-        assertEquals(1, cachedFibN(1));
+        Assertions.assertEquals(1, Fibonacci_05_Nth_Position_Recursive_Cached.cachedFibN(1));
     }
 
     @Test
     void fibonacci_nth_2() {
-        assertEquals(1, cachedFibN(2));
+        Assertions.assertEquals(1, Fibonacci_05_Nth_Position_Recursive_Cached.cachedFibN(2));
     }
 
     @Test
     void fibonacci_nth_3() {
-        assertEquals(2, cachedFibN(3));
+        Assertions.assertEquals(2, Fibonacci_05_Nth_Position_Recursive_Cached.cachedFibN(3));
     }
 
     @Test
     void fibonacci_nth_46() {
-        assertEquals(1836311903, cachedFibN(46));
+        Assertions.assertEquals(1836311903, Fibonacci_05_Nth_Position_Recursive_Cached.cachedFibN(46));
     }
 
     @Test
     void fibonacci_nth_47_then_exception() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            cachedFibN(47);
+            Fibonacci_05_Nth_Position_Recursive_Cached.cachedFibN(47);
         });
 
         String expectedMessage = "n must be in range 0 to 46";
@@ -72,7 +72,7 @@ class Fibonacci_05_Nth_Position_Recursive_Cache_Test {
     @Test
     void fibonacci_nth_neg_one_then_exception() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            cachedFibN(-1);
+            Fibonacci_05_Nth_Position_Recursive_Cached.cachedFibN(-1);
         });
 
         String expectedMessage = "n must be in range 0 to 46";
