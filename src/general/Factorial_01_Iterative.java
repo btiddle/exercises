@@ -1,11 +1,43 @@
-package general;
+/*
+Title:
+    Factorial Iterative
 
-import static org.junit.jupiter.api.Assertions.*;
+Exercise:
+    Write a factorial implementation that does not use recursion.
+
+Insights:
+    In mathematics, the factorial of a positive integer n, denoted by n!, is
+    the product of all positive integers less than or equal to n:
+    n! = n x (n-1) x (n-2) x (n-3) x ... x 3 x 2 x 1
+    For example,
+    5! = 5 x 4 x 3 x 2 x 1 = 120
+    The value 0! = 1.
+
+    Using long is better then int because value gets big quick. BigInteger is
+    is better then long because BigInteger objects have no upper bound.
+*/
+
+package general;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class Factorial_01_Iterative_Test {
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+class Factorial_01_Iterative {
+
+    static long factorial(int n) {
+        if (n < 1) {
+            throw new IllegalArgumentException(
+                    "n must be greater than zero");
+        }
+        long toReturn = 1;
+        for (int i = 1; i <= n; i++) {
+            toReturn *= i;
+        }
+        return toReturn;
+    }
 
     private final String expectedMessage = "n must be greater than zero";
 
@@ -29,20 +61,19 @@ public class Factorial_01_Iterative_Test {
         assertTrue(actualMessage.contains(expectedMessage));
     }
 
-
     @Test
-    public void factorial_1() {
+    void factorial_1() {
         Assertions.assertEquals(1, Factorial_01_Iterative.factorial(1));
     }
 
 
     @Test
-    public void factorial_2() {
+    void factorial_2() {
         Assertions.assertEquals(2, Factorial_01_Iterative.factorial(2));
     }
 
     @Test
-    public void factorial_3_to_20() {
+    void factorial_3_to_20() {
         Assertions.assertEquals(6L, Factorial_01_Iterative.factorial(3) );
         Assertions.assertEquals(24L, Factorial_01_Iterative.factorial(4) );
         Assertions.assertEquals(120L, Factorial_01_Iterative.factorial(5) );
@@ -64,11 +95,9 @@ public class Factorial_01_Iterative_Test {
     }
 
     @Test
-    public void print_factorial_1_to_20() {
+    void print_factorial_1_to_20() {
         for (int i = 1; i <= 20; i++) {
             System.out.println("factorial(" + i + ") = " + Factorial_01_Iterative.factorial(i));
         }
     }
 }
-
-

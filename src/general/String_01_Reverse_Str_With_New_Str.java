@@ -6,24 +6,19 @@ Exercise:
     Write a method to reverse a String.
 
 Insights:
-    In Java, a String is immutable, so once it has been constructed it is not
-    possible to change the contents. So when you are asked to reverse a
-    String, you are actually being asked to produce a new String object,
-    with the contents reversed.
+    Java Strings are immutable. To reverse a String, you have to produce a new
+    String object, with the contents reversed.
 
-    This approach, while fine, does require a large amount of memory. It
-    needs to hold the original String and the StringBuilder in memory.
-    This could be problematic if you were reversing some data of several
-    gigabytes in size.
+    One approach to reversing a String is to iterate over the contents in
+    reverse, populating a new container such as a StringBuilder as you go.
 */
 
 package general;
 
-import org.testng.SkipException;
 import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
-public class String_01_Reverse_New_Str {
+public class String_01_Reverse_Str_With_New_Str {
 
     public static String reverseNewStr(final String s) {
         final StringBuilder builder = new StringBuilder(s.length());

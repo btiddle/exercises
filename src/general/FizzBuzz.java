@@ -13,13 +13,17 @@ Insights:
 
 package general;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class FizzBuzz {
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-    public static List<String> fizzbuzz(int n) {
+class FizzBuzz {
+
+    static List<String> fizzbuzz(int n) {
         final List<String> seq = new ArrayList<>(n);
 
         for (int i = 1; i <= n; i++) {
@@ -35,5 +39,19 @@ public class FizzBuzz {
         }
 
         return seq;
+    }
+
+    private final List<String> expected = Arrays.asList(
+            "1", "2", "Fizz",
+            "4", "Buzz", "Fizz",
+            "7", "8", "Fizz",
+            "Buzz", "11", "Fizz",
+            "13", "14", "FizzBuzz",
+            "16", "17", "Fizz",
+            "19", "Buzz");
+
+    @Test
+    void FizzBuzz() {
+        assertEquals(expected, fizzbuzz(20));
     }
 }
