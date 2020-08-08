@@ -26,54 +26,30 @@ Insights:
 
 package general;
 
+import static general.String_02_Reverse_Str_In_Place.reverseInPlace;
+import static org.testng.Assert.*;
+
 import org.testng.annotations.Test;
-import static org.testng.Assert.assertEquals;
 
-public class String_02_Reverse_Str_In_Place {
-
-    public static String reverseInPlace (final String input) {
-        final StringBuilder builder = new StringBuilder (input);
-        int length = builder.length();
-        for (int frontPosition = 0; frontPosition < length / 2; frontPosition++) {
-            final char frontChar = builder.charAt(frontPosition);
-            final int endPostion = length - 1 - frontPosition;
-            builder.setCharAt(frontPosition, builder.charAt(endPostion));
-            builder.setCharAt(endPostion, frontChar);
-        }
-        return builder.toString();
-    }
+public class String_02_Reverse_Str_In_Place_Test {
 
     @Test
-    public void size_0() {
-        assertEquals (reverseInPlace(""), "");
-    }
+    public void size_0() { assertEquals(reverseInPlace(""), ""); }
 
     @Test
-    public void size_1() {
-        assertEquals (reverseInPlace("1"), "1");
-    }
+    public void size_1() { assertEquals(reverseInPlace("1"), "1"); }
 
     @Test
-    public void size_2() {
-        assertEquals (reverseInPlace("12"), "21");
-    }
+    public void size_2() { assertEquals(reverseInPlace("12"), "21"); }
 
     @Test
-    public void size_3() {
-        assertEquals (reverseInPlace("123"), "321");
-    }
-
+    public void size_3() { assertEquals(reverseInPlace("123"), "321"); }
 
     @Test
-    public void size_4() {
-        assertEquals (reverseInPlace("4321"), "1234");
-    }
+    public void size_4() { assertEquals(reverseInPlace("4321"), "1234"); }
 
     @Test
-    public void size_5() {
-        assertEquals (reverseInPlace("54321"), "12345");
-
-    }
+    public void size_5() { assertEquals(reverseInPlace("54321"), "12345"); }
 
     // Todo: null
 

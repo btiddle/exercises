@@ -13,33 +13,15 @@ Insights:
 
 package general;
 
-import org.junit.jupiter.api.Test;
+import static general.FizzBuzz.fizzbuzz;
+import static org.testng.Assert.*;
 
-import java.util.ArrayList;
+import org.testng.annotations.Test;
+
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-class FizzBuzz {
-
-    static List<String> fizzbuzz(int n) {
-        final List<String> seq = new ArrayList<>(n);
-
-        for (int i = 1; i <= n; i++) {
-            if (i % 15 == 0) {
-                seq.add("FizzBuzz");
-            } else if (i % 3 == 0) {
-                seq.add("Fizz");
-            } else if (i % 5 == 0) {
-                seq.add("Buzz");
-            } else {
-                seq.add(Integer.toString(i));
-            }
-        }
-
-        return seq;
-    }
+public class FizzBuzz_Test {
 
     private final List<String> expected = Arrays.asList(
             "1", "2", "Fizz",
@@ -51,7 +33,7 @@ class FizzBuzz {
             "19", "Buzz");
 
     @Test
-    void FizzBuzz() {
+    public void FizzBuzz() {
         assertEquals(expected, fizzbuzz(20));
     }
 }

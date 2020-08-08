@@ -20,50 +20,20 @@ Insights:
 
 package general;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static general.Fibonacci_02_SeqBigInteger.fibonacciSeqBigInt;
+
+import static org.testng.Assert.*;
+
+import org.testng.annotations.Test;
 
 import java.math.BigInteger;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-class Fibonacci_02_SeqBigInteger {
-
-    static List<BigInteger> fibonacciSeqBigInt(int n) {
-        if (n < 0) {
-            throw new IllegalArgumentException(
-                    "n must not be less than zero");
-        }
-
-        if (n == 0) {
-            return Arrays.asList(BigInteger.valueOf(0));
-        }
-
-        if (n == 1) {
-            return Arrays.asList(BigInteger.valueOf(0), BigInteger.valueOf(1));
-
-        }
-        final List<BigInteger> seq = new ArrayList<>(n);
-        seq.add(BigInteger.valueOf(0));
-        n = n - 1;
-        seq.add(BigInteger.valueOf(1));
-        n = n - 1;
-
-        while (n >= 0) {
-            BigInteger a = seq.get(seq.size() - 1);
-            BigInteger b = seq.get(seq.size() - 2);
-            seq.add(a.add(b));
-            n = n - 1;
-        }
-
-        return seq;
-    }
+public class Fibonacci_02_SeqBigInteger_Test {
 
     private final List<BigInteger> expected1 = Arrays.asList(
-            BigInteger.valueOf(0) );
+            BigInteger.valueOf(0));
 
     private final List<BigInteger> expected2 = Arrays.asList(
             BigInteger.valueOf(0),
@@ -116,26 +86,21 @@ class Fibonacci_02_SeqBigInteger {
             BigInteger.valueOf(2971215073L)
     );
 
-    @Test
-    void fibonacci_sequence_0() {
-        Assertions.assertEquals(expected1, Fibonacci_02_SeqBigInteger.fibonacciSeqBigInt(0));
+    static final String expectedMessage = ".*n must not be less than zero";
+
+    @Test (expectedExceptions = { IllegalArgumentException.class },
+            expectedExceptionsMessageRegExp = expectedMessage )
+    public void fibonacci_sequence_neg_one_exception() {
+        fibonacciSeqBigInt(-1);
     }
 
     @Test
-    void fibonacci_sequence_from_0_to_47() {
-        Assertions.assertEquals(expected2, Fibonacci_02_SeqBigInteger.fibonacciSeqBigInt(47));
+    public void fibonacci_sequence_0() {
+        assertEquals(expected1, fibonacciSeqBigInt(0));
     }
 
     @Test
-    void fibonacci_sequence_neg_one_exception() {
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            Fibonacci_02_SeqBigInteger.fibonacciSeqBigInt(-1);
-        });
-
-        String expectedMessage = "n must not be less than zero";
-        String actualMessage = exception.getMessage();
-
-        assertTrue(actualMessage.contains(expectedMessage));
+    public void fibonacci_sequence_from_0_to_47() {
+        assertEquals(expected2, fibonacciSeqBigInt(47));
     }
-
 }

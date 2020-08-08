@@ -1,44 +1,44 @@
 package collections;
 
+import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
-public class LinkedListExample {
+public class ArrayListExample {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         // Variables
-        LinkedList<String> food1 = new LinkedList<>(List.of("eggplant", "fig"));
-        LinkedList<String> food2 = new LinkedList<>(List.of("garlic", "honeydew"));
+        ArrayList<String> food1 = new ArrayList<>(List.of("eggplant", "fig"));
+        ArrayList<String> food2 = new ArrayList<>(List.of("garlic", "honeydew"));
         boolean boolResult;
         int intResult;
         String strResult;
 
         // Instantiate
-        LinkedList<String> obj = new LinkedList<>();
+        ArrayList<String> obj = new ArrayList<>();
 
         // add(Object o)
-        // Add value to end of LinkedList.
+        // Add value to end of ArrayList.
         obj.add("apple");
         obj.add("banana");
         System.out.println(obj);
 
         // add(int index, Object o)
-        // Adds Object o to the LinkedList at index.
+        // Adds Object o to the ArrayList at index.
         obj.add(0, "carrot");
         obj.add(1, "date");
         System.out.println(obj);
 
-        // addAll(LinkedList<>);
-        // Add a collection to end of LinkedList
+        // addAll(ArrayList<>);
+        // Add a collection to end of ArrayList
         obj.addAll(food2);
 
         // addAll(int index, Collection c );
-        // Add a collection to LinkedList at index
+        // Add a collection to ArrayList at index
         obj.addAll(4, food1);
 
         // boolean contains(Object o)
-        // Checks if Object o is present in LinkedList.
+        // Checks if Object o is present in ArrayList.
         boolResult = obj.contains("banana");     // true
         boolResult = obj.contains("watermelon");   // false
 
@@ -55,7 +55,7 @@ public class LinkedListExample {
         intResult = obj.indexOf("zucchini");
 
         // boolean isEmpty(Object o)
-        // Check if LinkedList is empty and return true or false.
+        // Check if ArrayList is empty and return true or false.
         boolResult = obj.isEmpty();
 
         // lastIndexOf
@@ -63,7 +63,7 @@ public class LinkedListExample {
         // iterator
 
         // remove(Object o)
-        // Remove Object o from the LinkedList.
+        // Remove Object o from the ArrayList.
         obj.remove("eggplant");
 
         // remove(int index)
@@ -85,11 +85,11 @@ public class LinkedListExample {
         obj.set(0, "lemon");
 
         // int size()
-        // Returns the size of the LinkedList
+        // Returns the size of the ArrayList
         System.out.println("Size of obj is " + obj.size());
 
         // sort()
-        // Sort LinkedList
+        // Sort ArrayList
         Collections.sort(obj);
         System.out.println(obj);
 
@@ -116,10 +116,10 @@ public class LinkedListExample {
         // forEach
 
         // clear()
-        // Remove all elements of the LinkedList.
+        // Remove all elements of the ArrayList.
         obj.clear();
 
-        // TODO: Add remainder of methods
+        // TODO: Add remainder of methods into list
     }
 }
 
